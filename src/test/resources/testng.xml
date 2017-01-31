@@ -1,0 +1,14 @@
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Example test run">
+<parameter name="baseUrl" value="http://www.hdfcbank.com/assets/popuppages/netbanking.htm?src=hp" />
+<parameter name="username" value="$username"/>
+<parameter name="password" value="$password"/>
+
+  <test name="Simple Test">
+    <classes>
+      <class name="com.hdfc.tests.LoginPageTest"/>
+    
+    </classes>
+  </test>
+</suite>
