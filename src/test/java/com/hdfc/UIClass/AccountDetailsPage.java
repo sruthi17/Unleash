@@ -14,6 +14,7 @@ public class AccountDetailsPage extends com.hdfc.utils.UtilItems{
 	public By exportButton=By.xpath("//button[@id=\"btnExcelExport\"]");
 	public AccountDetailsPage(WebDriver dirver){
 		Log.info("Navigating to Login page");
+		Log.info("Navigating to Login page");
 		this.waitForWaitDialogClose(dirver, 5);
 		wait=new WebDriverWait(driver,120);
 		wait.until(ExpectedConditions.titleContains("accountsummary"));
