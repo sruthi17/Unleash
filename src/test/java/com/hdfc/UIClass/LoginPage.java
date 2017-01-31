@@ -17,6 +17,7 @@ public class LoginPage extends UtilItems{
 	public By exportButton=By.xpath("//button[@id=\"btnExcelExport\"]");
 	public LoginPage(WebDriver dirver){
 		Log.info("Navigating to Login page");
+		Log.info("Navigating to Login page");
 		this.waitForWaitDialogClose(dirver, 5);
 		wait=new WebDriverWait(driver,120);
 		wait.until(ExpectedConditions.titleContains("NetBanking"));
