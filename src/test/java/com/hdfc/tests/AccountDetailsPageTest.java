@@ -24,6 +24,8 @@ public class AccountDetailsPageTest extends AbstractHDFTest {
 		loginAndsetupEnvironment(baseURL,username,password);
 		
 	}
+	
+	//code to validate account details
 	@Test
 	public void accountDetailsValidate(){
 		accountpage=loginpage.clickOnAccountsTab();
