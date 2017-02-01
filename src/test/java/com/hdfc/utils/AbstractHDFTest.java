@@ -9,8 +9,8 @@ public class AbstractHDFTest extends UtilItems{
 	private WebDriver driver;
 	WebDriverWait wait;
 	public void loginAndsetupEnvironment(String url,String username,String passwor){
-		WebDriver driver1=new FirefoxDriver();
-		driver1.get(url);
+		driver=new FirefoxDriver();
+		driver.get(url);
 		this.clickOnContinueNetBanking();
 		this.waitForAjaxComplete(driver, By.xpath("//input[@name='fldCustId']"));
 		driver.findElement(By.xpath("//input[@name='fldCustId']")).sendKeys(username);
@@ -43,6 +43,10 @@ public class AbstractHDFTest extends UtilItems{
 	}
 	public void clickOnLoginButton(){
 		driver.findElement(By.xpath("//img[contains(@src,'login')]")).click();
+	}
+	
+	public void logout(){
+		driver.findElement(By.xpath("//img[contains(@src,'logout')]")).click();
 	}
 
 }

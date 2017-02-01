@@ -32,7 +32,7 @@ public void clickOn(){
 }
 
 @AfterTest
-public void logout(){
-	
+public void logoutApp(){
+	logout();
 }
 }

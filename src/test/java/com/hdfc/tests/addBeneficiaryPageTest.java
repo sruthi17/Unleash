@@ -20,23 +20,18 @@ public class addBeneficiaryPageTest extends AbstractHDFTest {
 
 	@BeforeTest
 	@Parameters(value={"baseURL","username","password"})
-	public void setup(String url,String username,String password){
-		loginAndsetupEnvironment(url,username,password);
+	public void setup(String baseURL,String username,String password){
+		loginAndsetupEnvironment(baseURL,username,password);
 		
 	}
-	/*@Test
-	public void loginwithValidCredentials(){
-		accountpage=loginpage.viewAccountDetails();
-		//assertion
-	}*/
-	
+
 	@Test(priority=1)
 	public void viewBeneficiariesList(){
-		beneficiariespage=loginpage.beneficiariesList();
-		//assertion
+		beneficiariespage=loginpage.clickOnFundTransferTab().clickOnTransactMenu().clickOnThirdPartyTransfer().clickGobtnforNEFT().addBeneficiary();
+		
 	}
 	@AfterTest
-	public void logout(){
-		
+	public void logoutApp(){
+		logout();
 	}
 }

@@ -20,8 +20,8 @@ public class AccountDetailsPageTest extends AbstractHDFTest {
 
 	@BeforeTest
 	@Parameters(value={"baseURL","username","password"})
-	public void setup(String url,String username,String password){
-		loginAndsetupEnvironment(url,username,password);
+	public void setup(String baseURL,String username,String password){
+		loginAndsetupEnvironment(baseURL,username,password);
 		
 	}
 	@Test
@@ -33,8 +33,8 @@ public class AccountDetailsPageTest extends AbstractHDFTest {
 		
 		}
 	@AfterTest
-	public void logout(){
-		
+	public void logoutApp(){
+		logout();
 	}
 	
 	}

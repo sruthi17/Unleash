@@ -11,7 +11,7 @@ public class AccountDetailsPage extends com.hdfc.utils.UtilItems{
 	private WebDriver driver;
 	private static Logger Log=Logger.getLogger(AccountDetailsPage.class);
 	WebDriverWait wait;
-	public By exportButton=By.xpath("//button[@id=\"btnExcelExport\"]");
+	
 	public AccountDetailsPage(WebDriver dirver){
 		Log.info("Navigating to Login page");
 		Log.info("Navigating to Login page");
@@ -35,14 +35,18 @@ public class AccountDetailsPage extends com.hdfc.utils.UtilItems{
 	}
 	
 	public String getAuccountSummary(){
-		String accountsummary=driver.findElement(By.id("")).getText();
+		String accountsummary=driver.findElement(By.xpath("//*[@id='SavingTotalSummary']")).getText();
+		String acc[]=accountsummary.split("INR");
+		accountsummary=acc[1];
 		return accountsummary;
 	}
 	
 	public String getAccountDetails(){
-		String accountdetails=driver.findElement(By.id("")).getText();
+		String accountdetails=driver.findElement(By.xpath("//*[@id='SavingTotalSummary']")).getText();
 		String acctdt="return document.getElementByXPath('//span[@class='othcurr']').getText();";
-		return accountdetails;
+		String acc[]=acctdt.split("INR");
+		acctdt=acc[1];
+		return acctdt;
 	}
 
 }

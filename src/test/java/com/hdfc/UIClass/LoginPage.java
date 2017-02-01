@@ -14,7 +14,7 @@ public class LoginPage extends UtilItems{
 	private WebDriver driver;
 	private static Logger Log=Logger.getLogger(LoginPage.class);
 	WebDriverWait wait;
-	public By exportButton=By.xpath("//button[@id=\"btnExcelExport\"]");
+	
 	public LoginPage(WebDriver dirver){
 		Log.info("Navigating to Login page");
 		Log.info("Navigating to Login page");
@@ -59,6 +59,17 @@ public class LoginPage extends UtilItems{
 		}
 	return new AccountDetailsPage(driver);
 }
+	
+	public BeneficiariesPage clickOnFundTransferTab(){
+		try{
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[contains(@src,'s_fund')]")));
+			driver.findElement(By.xpath("//img[contains(@src,'s_fund')]")).click();
+			}catch(Exception e){
+				Log.error("Cannot find Funds Transfer Tab\n",e);
+				throw new IllegalStateException("Cannot find Funds Transfer Tab \n",e);
+			}
+		return new BeneficiariesPage(driver);
+	}
 
 public BeneficiariesPage beneficiariesList(){
 	try{

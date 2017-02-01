@@ -13,7 +13,7 @@ public class addBeneficiaryPage extends UtilItems{
 	private WebDriver driver;
 	private static Logger Log=Logger.getLogger(addBeneficiaryPage.class);
 	WebDriverWait wait;
-	public By exportButton=By.xpath("//button[@id=\"btnExcelExport\"]");
+	
 	public addBeneficiaryPage(WebDriver dirver){
 		Log.info("Navigating to Login page");
 		this.waitForWaitDialogClose(dirver, 5);
@@ -23,5 +23,15 @@ public class addBeneficiaryPage extends UtilItems{
 		Log.info("Navigted to Add Beneficiary Page");
 		this.driver=driver;
 	}
-
+	public BeneficiariesPage clickOnTransactMenu(){
+		try{
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='menu-drop']/ul/li/a/strong[contains(text(),'Transact')]")));
+			driver.findElement(By.xpath("//div[@class='menu-drop']/ul/li/a/strong[contains(text(),'Transact')]")).click();
+			}catch(Exception e){
+				Log.error("Cannot find Transact Menu\n",e);
+				throw new IllegalStateException("Cannot find Transact Menu \n",e);
+			}
+		return new BeneficiariesPage(driver);
+	}
+	
 }
